@@ -1,5 +1,8 @@
 <?php
 
+use EvoAi\LaravelSdk\Exceptions\EvoAiException;
+use Illuminate\Contracts\Support\Arrayable;
+
 arch('DTOs are readonly classes')
     ->expect('EvoAi\LaravelSdk\DTOs')
     ->toBeReadonly()
@@ -20,7 +23,7 @@ arch('No debugging functions')
 
 arch('DTOs implement Arrayable')
     ->expect('EvoAi\LaravelSdk\DTOs')
-    ->toImplement(\Illuminate\Contracts\Support\Arrayable::class)
+    ->toImplement(Arrayable::class)
     ->ignoring('EvoAi\LaravelSdk\DTOs\Concerns');
 
 arch('Events are readonly classes')
@@ -29,5 +32,5 @@ arch('Events are readonly classes')
 
 arch('Exceptions extend EvoAiException')
     ->expect('EvoAi\LaravelSdk\Exceptions')
-    ->toExtend(\EvoAi\LaravelSdk\Exceptions\EvoAiException::class)
-    ->ignoring(\EvoAi\LaravelSdk\Exceptions\EvoAiException::class);
+    ->toExtend(EvoAiException::class)
+    ->ignoring(EvoAiException::class);

@@ -7,7 +7,7 @@ use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Traits\Dumpable;
 
 /** @implements Arrayable<string, mixed> */
-readonly class ClientData implements Arrayable, \JsonSerializable
+readonly class ClientData implements \JsonSerializable, Arrayable
 {
     use Dumpable;
     use HasFactory;

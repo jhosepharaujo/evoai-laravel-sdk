@@ -9,6 +9,7 @@ use EvoAi\LaravelSdk\Exceptions\ForbiddenException;
 use EvoAi\LaravelSdk\Exceptions\NotFoundException;
 use EvoAi\LaravelSdk\Exceptions\ValidationException;
 use Illuminate\Http\Client\PendingRequest;
+use Illuminate\Http\Client\RequestException;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
 
@@ -131,7 +132,7 @@ final class EvoAiClient implements EvoAiClientInterface
 
     private function url(string $uri): string
     {
-        return $this->baseUrl . $this->apiPrefix . $uri;
+        return $this->baseUrl.$this->apiPrefix.$uri;
     }
 
     private function buildRequest(): PendingRequest
@@ -141,7 +142,7 @@ final class EvoAiClient implements EvoAiClientInterface
             ->retry(
                 times: $this->retryConfig['times'],
                 sleepMilliseconds: $this->retryConfig['sleep'],
-                when: fn (\Exception $exception): bool => $exception instanceof \Illuminate\Http\Client\RequestException
+                when: fn (\Exception $exception): bool => $exception instanceof RequestException
                     && in_array($exception->response->status(), $this->retryConfig['when'], true),
                 throw: false,
             )

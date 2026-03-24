@@ -7,7 +7,7 @@ use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Traits\Dumpable;
 
 /** @implements Arrayable<string, mixed> */
-readonly class ApiKeyData implements Arrayable, \JsonSerializable
+readonly class ApiKeyData implements \JsonSerializable, Arrayable
 {
     use Dumpable;
     use HasFactory;

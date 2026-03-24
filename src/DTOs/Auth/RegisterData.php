@@ -6,7 +6,7 @@ use EvoAi\LaravelSdk\DTOs\Concerns\HasFactory;
 use Illuminate\Contracts\Support\Arrayable;
 
 /** @implements Arrayable<string, string> */
-readonly class RegisterData implements Arrayable, \JsonSerializable
+readonly class RegisterData implements \JsonSerializable, Arrayable
 {
     use HasFactory;
 

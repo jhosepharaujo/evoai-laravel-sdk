@@ -6,7 +6,7 @@ use EvoAi\LaravelSdk\DTOs\Concerns\HasFactory;
 use Illuminate\Contracts\Support\Arrayable;
 
 /** @implements Arrayable<string, mixed> */
-readonly class FolderUpdateData implements Arrayable, \JsonSerializable
+readonly class FolderUpdateData implements \JsonSerializable, Arrayable
 {
     use HasFactory;
 

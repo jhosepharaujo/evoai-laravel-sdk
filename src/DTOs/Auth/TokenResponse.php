@@ -7,7 +7,7 @@ use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Traits\Dumpable;
 
 /** @implements Arrayable<string, string> */
-readonly class TokenResponse implements Arrayable, \JsonSerializable
+readonly class TokenResponse implements \JsonSerializable, Arrayable
 {
     use Dumpable;
     use HasFactory;

@@ -7,7 +7,7 @@ use EvoAi\LaravelSdk\Enums\AgentType;
 use Illuminate\Contracts\Support\Arrayable;
 
 /** @implements Arrayable<string, mixed> */
-readonly class AgentCreateData implements Arrayable, \JsonSerializable
+readonly class AgentCreateData implements \JsonSerializable, Arrayable
 {
     use HasFactory;
 

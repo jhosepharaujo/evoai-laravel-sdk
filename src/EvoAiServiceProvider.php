@@ -12,7 +12,7 @@ final class EvoAiServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/evoai.php', 'evoai');
+        $this->mergeConfigFrom(__DIR__.'/../config/evoai.php', 'evoai');
 
         $this->app->singleton(EvoAiClientInterface::class, function (Application $app): EvoAiClient {
             $config = $app['config']['evoai'];
@@ -60,7 +60,7 @@ final class EvoAiServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/evoai.php' => config_path('evoai.php'),
+                __DIR__.'/../config/evoai.php' => config_path('evoai.php'),
             ], 'evoai-config');
         }
     }

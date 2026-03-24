@@ -2,6 +2,7 @@
 
 namespace EvoAi\LaravelSdk\Facades;
 
+use EvoAi\LaravelSdk\EvoAiManager;
 use Illuminate\Support\Facades\Facade;
 
 /**
@@ -21,7 +22,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static \EvoAi\LaravelSdk\EvoAiManager withApiKey(string $apiKey)
  * @method static \EvoAi\LaravelSdk\EvoAiManager forClient(string $clientId)
  *
- * @see \EvoAi\LaravelSdk\EvoAiManager
+ * @see EvoAiManager
  */
 final class EvoAi extends Facade
 {
